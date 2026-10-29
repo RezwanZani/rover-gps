@@ -1,0 +1,24 @@
+[0.402s] Invoking command in '/home/tajikur/Downloads/rover_module/src/gps_data': PYTHONPATH=/home/tajikur/Downloads/rover_module/build/gps_data/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/tajikur/Downloads/rover_module/install/gps_data/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/gps_data build --build-base /home/tajikur/Downloads/rover_module/build/gps_data/build install --record /home/tajikur/Downloads/rover_module/build/gps_data/install.log --single-version-externally-managed install_data
+[0.549s] running egg_info
+[0.549s] writing ../../build/gps_data/gps_data.egg-info/PKG-INFO
+[0.549s] writing dependency_links to ../../build/gps_data/gps_data.egg-info/dependency_links.txt
+[0.549s] writing entry points to ../../build/gps_data/gps_data.egg-info/entry_points.txt
+[0.549s] writing requirements to ../../build/gps_data/gps_data.egg-info/requires.txt
+[0.549s] writing top-level names to ../../build/gps_data/gps_data.egg-info/top_level.txt
+[0.550s] reading manifest file '../../build/gps_data/gps_data.egg-info/SOURCES.txt'
+[0.552s] writing manifest file '../../build/gps_data/gps_data.egg-info/SOURCES.txt'
+[0.552s] running build
+[0.552s] running build_py
+[0.552s] copying gps_data/gps_node.py -> /home/tajikur/Downloads/rover_module/build/gps_data/build/lib/gps_data
+[0.552s] running install
+[0.552s] running install_lib
+[0.552s] copying /home/tajikur/Downloads/rover_module/build/gps_data/build/lib/gps_data/gps_node.py -> /home/tajikur/Downloads/rover_module/install/gps_data/lib/python3.10/site-packages/gps_data
+[0.553s] byte-compiling /home/tajikur/Downloads/rover_module/install/gps_data/lib/python3.10/site-packages/gps_data/gps_node.py to gps_node.cpython-310.pyc
+[0.554s] running install_data
+[0.554s] running install_egg_info
+[0.555s] removing '/home/tajikur/Downloads/rover_module/install/gps_data/lib/python3.10/site-packages/gps_data-0.0.1-py3.10.egg-info' (and everything under it)
+[0.555s] Copying ../../build/gps_data/gps_data.egg-info to /home/tajikur/Downloads/rover_module/install/gps_data/lib/python3.10/site-packages/gps_data-0.0.1-py3.10.egg-info
+[0.556s] running install_scripts
+[0.569s] Installing gps_node script to /home/tajikur/Downloads/rover_module/install/gps_data/lib/gps_data
+[0.569s] writing list of installed files to '/home/tajikur/Downloads/rover_module/build/gps_data/install.log'
+[0.585s] Invoked command in '/home/tajikur/Downloads/rover_module/src/gps_data' returned '0': PYTHONPATH=/home/tajikur/Downloads/rover_module/build/gps_data/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/tajikur/Downloads/rover_module/install/gps_data/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/gps_data build --build-base /home/tajikur/Downloads/rover_module/build/gps_data/build install --record /home/tajikur/Downloads/rover_module/build/gps_data/install.log --single-version-externally-managed install_data

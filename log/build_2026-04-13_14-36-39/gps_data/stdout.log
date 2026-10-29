@@ -1,0 +1,40 @@
+running egg_info
+creating ../../build/gps_data/gps_data.egg-info
+writing ../../build/gps_data/gps_data.egg-info/PKG-INFO
+writing dependency_links to ../../build/gps_data/gps_data.egg-info/dependency_links.txt
+writing entry points to ../../build/gps_data/gps_data.egg-info/entry_points.txt
+writing requirements to ../../build/gps_data/gps_data.egg-info/requires.txt
+writing top-level names to ../../build/gps_data/gps_data.egg-info/top_level.txt
+writing manifest file '../../build/gps_data/gps_data.egg-info/SOURCES.txt'
+reading manifest file '../../build/gps_data/gps_data.egg-info/SOURCES.txt'
+writing manifest file '../../build/gps_data/gps_data.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/tajikur/Downloads/aaaa/build/gps_data/build
+creating /home/tajikur/Downloads/aaaa/build/gps_data/build/lib
+creating /home/tajikur/Downloads/aaaa/build/gps_data/build/lib/gps_data
+copying gps_data/__init__.py -> /home/tajikur/Downloads/aaaa/build/gps_data/build/lib/gps_data
+copying gps_data/map_acc.py -> /home/tajikur/Downloads/aaaa/build/gps_data/build/lib/gps_data
+copying gps_data/gps_node.py -> /home/tajikur/Downloads/aaaa/build/gps_data/build/lib/gps_data
+running install
+running install_lib
+creating /home/tajikur/Downloads/aaaa/install/gps_data/lib/python3.10/site-packages/gps_data
+copying /home/tajikur/Downloads/aaaa/build/gps_data/build/lib/gps_data/__init__.py -> /home/tajikur/Downloads/aaaa/install/gps_data/lib/python3.10/site-packages/gps_data
+copying /home/tajikur/Downloads/aaaa/build/gps_data/build/lib/gps_data/map_acc.py -> /home/tajikur/Downloads/aaaa/install/gps_data/lib/python3.10/site-packages/gps_data
+copying /home/tajikur/Downloads/aaaa/build/gps_data/build/lib/gps_data/gps_node.py -> /home/tajikur/Downloads/aaaa/install/gps_data/lib/python3.10/site-packages/gps_data
+byte-compiling /home/tajikur/Downloads/aaaa/install/gps_data/lib/python3.10/site-packages/gps_data/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/tajikur/Downloads/aaaa/install/gps_data/lib/python3.10/site-packages/gps_data/map_acc.py to map_acc.cpython-310.pyc
+byte-compiling /home/tajikur/Downloads/aaaa/install/gps_data/lib/python3.10/site-packages/gps_data/gps_node.py to gps_node.cpython-310.pyc
+running install_data
+creating /home/tajikur/Downloads/aaaa/install/gps_data/share/ament_index
+creating /home/tajikur/Downloads/aaaa/install/gps_data/share/ament_index/resource_index
+creating /home/tajikur/Downloads/aaaa/install/gps_data/share/ament_index/resource_index/packages
+copying resource/gps_data -> /home/tajikur/Downloads/aaaa/install/gps_data/share/ament_index/resource_index/packages
+copying package.xml -> /home/tajikur/Downloads/aaaa/install/gps_data/share/gps_data
+creating /home/tajikur/Downloads/aaaa/install/gps_data/share/gps_data/launch
+copying launch/gps.launch.py -> /home/tajikur/Downloads/aaaa/install/gps_data/share/gps_data/launch
+running install_egg_info
+Copying ../../build/gps_data/gps_data.egg-info to /home/tajikur/Downloads/aaaa/install/gps_data/lib/python3.10/site-packages/gps_data-0.0.1-py3.10.egg-info
+running install_scripts
+Installing gps_node script to /home/tajikur/Downloads/aaaa/install/gps_data/lib/gps_data
+writing list of installed files to '/home/tajikur/Downloads/aaaa/build/gps_data/install.log'

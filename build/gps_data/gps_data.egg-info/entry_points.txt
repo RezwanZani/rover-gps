@@ -1,0 +1,3 @@
+[console_scripts]
+gps_node = gps_data.gps_node:main
+rtk_bridge_node = gps_data.rtk_bridge_node:main

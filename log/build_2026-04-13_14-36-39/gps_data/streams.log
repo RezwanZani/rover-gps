@@ -1,0 +1,42 @@
+[0.443s] Invoking command in '/home/tajikur/Downloads/aaaa/src/gps_data': PYTHONPATH=/home/tajikur/Downloads/aaaa/build/gps_data/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/tajikur/Downloads/aaaa/install/gps_data/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/gps_data build --build-base /home/tajikur/Downloads/aaaa/build/gps_data/build install --record /home/tajikur/Downloads/aaaa/build/gps_data/install.log --single-version-externally-managed install_data
+[0.588s] running egg_info
+[0.588s] creating ../../build/gps_data/gps_data.egg-info
+[0.588s] writing ../../build/gps_data/gps_data.egg-info/PKG-INFO
+[0.588s] writing dependency_links to ../../build/gps_data/gps_data.egg-info/dependency_links.txt
+[0.588s] writing entry points to ../../build/gps_data/gps_data.egg-info/entry_points.txt
+[0.588s] writing requirements to ../../build/gps_data/gps_data.egg-info/requires.txt
+[0.588s] writing top-level names to ../../build/gps_data/gps_data.egg-info/top_level.txt
+[0.588s] writing manifest file '../../build/gps_data/gps_data.egg-info/SOURCES.txt'
+[0.589s] reading manifest file '../../build/gps_data/gps_data.egg-info/SOURCES.txt'
+[0.589s] writing manifest file '../../build/gps_data/gps_data.egg-info/SOURCES.txt'
+[0.590s] running build
+[0.590s] running build_py
+[0.590s] creating /home/tajikur/Downloads/aaaa/build/gps_data/build
+[0.590s] creating /home/tajikur/Downloads/aaaa/build/gps_data/build/lib
+[0.590s] creating /home/tajikur/Downloads/aaaa/build/gps_data/build/lib/gps_data
+[0.590s] copying gps_data/__init__.py -> /home/tajikur/Downloads/aaaa/build/gps_data/build/lib/gps_data
+[0.590s] copying gps_data/map_acc.py -> /home/tajikur/Downloads/aaaa/build/gps_data/build/lib/gps_data
+[0.590s] copying gps_data/gps_node.py -> /home/tajikur/Downloads/aaaa/build/gps_data/build/lib/gps_data
+[0.590s] running install
+[0.590s] running install_lib
+[0.591s] creating /home/tajikur/Downloads/aaaa/install/gps_data/lib/python3.10/site-packages/gps_data
+[0.591s] copying /home/tajikur/Downloads/aaaa/build/gps_data/build/lib/gps_data/__init__.py -> /home/tajikur/Downloads/aaaa/install/gps_data/lib/python3.10/site-packages/gps_data
+[0.591s] copying /home/tajikur/Downloads/aaaa/build/gps_data/build/lib/gps_data/map_acc.py -> /home/tajikur/Downloads/aaaa/install/gps_data/lib/python3.10/site-packages/gps_data
+[0.591s] copying /home/tajikur/Downloads/aaaa/build/gps_data/build/lib/gps_data/gps_node.py -> /home/tajikur/Downloads/aaaa/install/gps_data/lib/python3.10/site-packages/gps_data
+[0.591s] byte-compiling /home/tajikur/Downloads/aaaa/install/gps_data/lib/python3.10/site-packages/gps_data/__init__.py to __init__.cpython-310.pyc
+[0.591s] byte-compiling /home/tajikur/Downloads/aaaa/install/gps_data/lib/python3.10/site-packages/gps_data/map_acc.py to map_acc.cpython-310.pyc
+[0.592s] byte-compiling /home/tajikur/Downloads/aaaa/install/gps_data/lib/python3.10/site-packages/gps_data/gps_node.py to gps_node.cpython-310.pyc
+[0.592s] running install_data
+[0.593s] creating /home/tajikur/Downloads/aaaa/install/gps_data/share/ament_index
+[0.593s] creating /home/tajikur/Downloads/aaaa/install/gps_data/share/ament_index/resource_index
+[0.593s] creating /home/tajikur/Downloads/aaaa/install/gps_data/share/ament_index/resource_index/packages
+[0.593s] copying resource/gps_data -> /home/tajikur/Downloads/aaaa/install/gps_data/share/ament_index/resource_index/packages
+[0.593s] copying package.xml -> /home/tajikur/Downloads/aaaa/install/gps_data/share/gps_data
+[0.593s] creating /home/tajikur/Downloads/aaaa/install/gps_data/share/gps_data/launch
+[0.593s] copying launch/gps.launch.py -> /home/tajikur/Downloads/aaaa/install/gps_data/share/gps_data/launch
+[0.593s] running install_egg_info
+[0.594s] Copying ../../build/gps_data/gps_data.egg-info to /home/tajikur/Downloads/aaaa/install/gps_data/lib/python3.10/site-packages/gps_data-0.0.1-py3.10.egg-info
+[0.594s] running install_scripts
+[0.606s] Installing gps_node script to /home/tajikur/Downloads/aaaa/install/gps_data/lib/gps_data
+[0.606s] writing list of installed files to '/home/tajikur/Downloads/aaaa/build/gps_data/install.log'
+[0.620s] Invoked command in '/home/tajikur/Downloads/aaaa/src/gps_data' returned '0': PYTHONPATH=/home/tajikur/Downloads/aaaa/build/gps_data/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/tajikur/Downloads/aaaa/install/gps_data/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/gps_data build --build-base /home/tajikur/Downloads/aaaa/build/gps_data/build install --record /home/tajikur/Downloads/aaaa/build/gps_data/install.log --single-version-externally-managed install_data
