@@ -6,17 +6,17 @@ from launch_ros.actions import Node
 
 
 def generate_launch_description():
-    # ---------------- LAUNCH ARGUMENTS ----------------
+    # ---------------- STATIC PORT LAUNCH ARGUMENTS ----------------
     xbee_port_arg = DeclareLaunchArgument(
         'xbee_port',
-        default_value='/dev/ttyUSB0',
-        description='Serial port for the XBee RTCM receiver'
+        default_value='/dev/rover_900mhz',
+        description='Static serial port for the XBee 900MHz RTCM receiver'
     )
 
     gps_port_arg = DeclareLaunchArgument(
         'gps_port',
-        default_value='/dev/ttyUSB1',
-        description='Serial port for the LC29H RTK GPS module'
+        default_value='/dev/rover_rtk',
+        description='Static serial port for the LC29H RTK GPS module'
     )
 
     baud_rate_arg = DeclareLaunchArgument(
@@ -46,6 +46,7 @@ def generate_launch_description():
     # ---------------- NODES ----------------
 
     # Node 1: Main RTK Bridge Node (XBee serial -> GPS serial + NavSatFix /fix)
+    # Fully fault-tolerant: handles disconnection, independent operation & auto-reconnect.
     rtk_bridge_node = Node(
         package='gps_data',
         executable='rtk_bridge_node',
@@ -55,11 +56,13 @@ def generate_launch_description():
             'xbee_port': LaunchConfiguration('xbee_port'),
             'gps_port': LaunchConfiguration('gps_port'),
             'baud_rate': LaunchConfiguration('baud_rate'),
+            'frame_id': LaunchConfiguration('frame_id'),
         }],
         condition=IfCondition(LaunchConfiguration('use_bridge'))
     )
 
     # Node 2: Standalone GPS Node (subscribes to ROS topic /rtcm -> GPS serial -> /fix)
+    # Fully fault-tolerant: handles disconnection & auto-reconnect.
     gps_node = Node(
         package='gps_data',
         executable='gps_node',
