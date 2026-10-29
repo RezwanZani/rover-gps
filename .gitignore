@@ -1,0 +1,60 @@
+# ==========================================
+# ROS 2 Build & Workspace Artifacts
+# ==========================================
+build/
+install/
+log/
+
+# Colcon & Ament build system markers
+COLCON_IGNORE
+AMENT_IGNORE
+
+# ==========================================
+# Python Compilation & Virtual Environments
+# ==========================================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+env/
+venv/
+
+# ==========================================
+# C++ / CMake Generated Files
+# ==========================================
+# (Only needed if you accidentally ran cmake outside of colcon)
+CMakeFiles/
+CMakeCache.txt
+CMakeLists.txt.user
+*.o
+*.a
+*.so
+*.dylib
+
+# ==========================================
+# IDEs and Text Editors (Optional but Recommended)
+# ==========================================
+# VS Code
+.vscode/
+
+# JetBrains (CLion, PyCharm, etc.)
+.idea/
+
+# Qt Creator & Eclipse
+qtcreator-*
+*.user
+.project
+.cproject
+
+# Temporary/Backup Files (Vim, Emacs)
+*~
+*.swp
+*.swo
+.#*
+
+# ==========================================
+# Operating System Metadata
+# ==========================================
+.DS_Store
+Thumbs.db

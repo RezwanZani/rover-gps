@@ -61,12 +61,13 @@ class DriftPlot(Node):
             self.get_logger().info("Reference point set")
             return
 
-        # simple conversion (no Earth radius, no complexity)
+        # Flat-earth approximation with latitude scaling
+        import math
         dlat = msg.latitude - self.ref_lat
         dlon = msg.longitude - self.ref_lon
 
-        north = dlat * 111000     # meters per degree latitude
-        east  = dlon * 111000     # approx
+        north = dlat * 111320.0     # meters per degree latitude
+        east  = dlon * 111320.0 * math.cos(math.radians(self.ref_lat))
 
         self.east.append(east)
         self.north.append(north)
@@ -85,8 +86,8 @@ class DriftPlot(Node):
         return []
 
 
-def main():
-    rclpy.init()
+def main(args=None):
+    rclpy.init(args=args)
     node = DriftPlot()
 
     import threading
@@ -95,6 +96,8 @@ def main():
 
     try:
         plt.show()
+    except KeyboardInterrupt:
+        pass
     finally:
         node.destroy_node()
         rclpy.shutdown()

@@ -10,9 +10,11 @@
 
   <depend>rclpy</depend>
   <depend>sensor_msgs</depend>
+  <depend>rtcm_msgs</depend>
 
   <exec_depend>python3-serial</exec_depend>
   <exec_depend>python3-pynmeagps</exec_depend>
+  <exec_depend>python3-matplotlib</exec_depend>
 
   <export>
     <build_type>ament_python</build_type>

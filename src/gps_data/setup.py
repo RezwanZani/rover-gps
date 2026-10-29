@@ -14,7 +14,7 @@ setup(
         ('share/' + package_name, ['package.xml']),
         (os.path.join('share', package_name, 'launch'), glob('launch/*.py')),
     ],
-    install_requires=['setuptools', 'pyserial', 'pynmeagps'],
+    install_requires=['setuptools', 'pyserial', 'pynmeagps', 'matplotlib'],
     zip_safe=True,
     maintainer='Your Name',
     maintainer_email='you@example.com',
@@ -25,6 +25,7 @@ setup(
         'console_scripts': [
             'gps_node = gps_data.gps_node:main',
             'rtk_bridge_node = gps_data.rtk_bridge_node:main',
+            'map_acc = gps_data.map_acc:main',
         ],
     },
 )
