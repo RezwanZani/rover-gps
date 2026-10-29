@@ -1,6 +1,7 @@
 import time
 import threading
 import datetime
+import json
 import serial
 from pynmeagps import NMEAReader
 
@@ -401,6 +402,81 @@ class RTKBridgeNode(Node):
         self.get_logger().info(
             f"[{ts}] {gps_status} | RTCM pkts: {pkts} | {xbee_status}"
         )
+
+        # Transmit 1 Hz heartbeat ping back to the Base Station over XBee
+        self.send_telemetry_ping()
+
+    # =========================================================================
+    #                    BASE STATION TELEMETRY PING (HEARTBEAT)
+    # =========================================================================
+
+    def _build_xbee_api_frame(self, payload: bytes) -> bytes:
+        """
+        Wraps payload into an XBee API Mode 1 (Transmit Request 0x10) frame.
+        Broadcasts to 64-bit address 0x000000000000FFFF.
+        Frame ID = 0x00 (disables TX response to maximize bandwidth).
+        """
+        frame_data = bytearray()
+        frame_data.append(0x10)  # Type: Transmit Request
+        frame_data.append(0x00)  # Frame ID: 0 (No ACK)
+        frame_data.extend(b'\x00\x00\x00\x00\x00\x00\xFF\xFF')  # 64-bit Broadcast
+        frame_data.extend(b'\xFF\xFE')                           # 16-bit Broadcast
+        frame_data.append(0x00)                                  # Broadcast radius (max)
+        frame_data.append(0x00)                                  # Options
+        frame_data.extend(payload)
+
+        length = len(frame_data)
+        checksum = 0xFF - (sum(frame_data) & 0xFF)
+
+        packet = bytearray()
+        packet.append(0x7E)                  # Start delimiter
+        packet.append((length >> 8) & 0xFF)  # Length MSB
+        packet.append(length & 0xFF)         # Length LSB
+        packet.extend(frame_data)
+        packet.append(checksum)
+        return bytes(packet)
+
+    def send_telemetry_ping(self):
+        """
+        Sends a 1 Hz telemetry heartbeat from Rover -> Base Station via XBee RF.
+        Informs the base station whether rover is connected, fix quality, coordinates,
+        and total RTCM packets received.
+        """
+        # Only attempt to send if XBee is connected
+        if not self.xbee_connected or self.xbee_ser is None:
+            return
+
+        with self.state_lock:
+            lat = self.current_lat
+            lon = self.current_lon
+            qual_code = self.current_quality
+            pkts = self.rtcm_pkt_count
+            gps_on = self.gps_connected
+
+        qual_label = FIX_LABELS.get(qual_code, f"Q{qual_code}")
+
+        ping_payload = {
+            "type": "ROVER_PING",
+            "gps_connected": gps_on,
+            "fix": qual_label,
+            "qual": qual_code,
+            "rtcm": pkts,
+            "lat": round(lat, 8) if lat is not None else None,
+            "lon": round(lon, 8) if lon is not None else None,
+        }
+
+        # Compact JSON string terminated with newline
+        json_bytes = json.dumps(ping_payload).encode('utf-8') + b'\n'
+
+        # Build XBee API frame (and send raw if in transparent mode)
+        frame = self._build_xbee_api_frame(json_bytes)
+
+        with self.xbee_lock:
+            if self.xbee_ser and self.xbee_ser.is_open:
+                try:
+                    self.xbee_ser.write(frame)
+                except Exception as e:
+                    self.get_logger().debug(f"Failed to transmit telemetry ping: {e}")
 
     # =========================================================================
     #                       CLEAN SHUTDOWN
